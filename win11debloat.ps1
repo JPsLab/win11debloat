@@ -1,14 +1,22 @@
-Get-AppxPackage Microsoft.ZuneMusic* | Remove-AppxPackage
-Get-AppxPackage Microsoft.Todos* | Remove-AppxPackage
-Get-AppxPackage Microsoft.YourPhone* | Remove-AppxPackage
-Get-AppxPackage Microsoft.DevHome* | Remove-AppxPackage
-Get-AppxPackage Microsoft.Copilot* | Remove-AppxPackage
-Get-AppxPackage Microsoft.WindowsFeedbackHub* | Remove-AppxPackage
-Get-AppxPackage Microsoft.OutlookForWindows* | Remove-AppxPackage
-Get-AppxPackage Microsoft.MicrosoftOfficeHub* | Remove-AppxPackage
-Get-AppxPackage Microsoft.MicrosoftStickyNotes* | Remove-AppxPackage
-Get-AppxPackage Microsoft.MicrosoftSolitaireCollection* | Remove-AppxPackage
-Get-AppxPackage Microsoft.GamingApp* | Remove-AppxPackage
-Get-AppxPackage Microsoft.BingWeather* | Remove-AppxPackage
-Get-AppxPackage Microsoft.BingNews* | Remove-AppxPackage
-Get-AppxPackage Clipchamp.Clipchamp* | Remove-AppxPackage
+# Liste der App-Namen
+$appNames = @(
+    "Microsoft.ZuneMusic",
+    "Microsoft.Todos",
+    "Microsoft.YourPhone",
+    "Microsoft.DevHome",
+    "Microsoft.Copilot",
+    "Microsoft.WindowsFeedbackHub",
+    "Microsoft.OutlookForWindows",
+    "Microsoft.MicrosoftOfficeHub",
+    "Microsoft.MicrosoftStickyNotes",
+    "Microsoft.MicrosoftSolitaireCollection",
+    "Microsoft.GamingApp",
+    "Microsoft.BingWeather",
+    "Microsoft.BingNews",
+    "Clipchamp.Clipchamp"
+)
+
+# Entfernen der Apps
+foreach ($app in $appNames) {
+    Get-AppxPackage "$app*" -AllUsers | Remove-AppxPackage -ErrorAction SilentlyContinue
+}
