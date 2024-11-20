@@ -1,3 +1,4 @@
+# Befehl als Admin ausführen: Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JPsLab/win11debloat/refs/heads/main/win11debloat.ps1" -UseBasicParsing).Content
 # Liste der App-Namen
 $appNames = @(
     "Microsoft.ZuneMusic",
