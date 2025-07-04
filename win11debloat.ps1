@@ -19,5 +19,5 @@ $appNames = @(
 
 # Entfernen der Apps
 foreach ($app in $appNames) {
-    Get-AppxPackage "$app*" | Remove-AppxPackage -ErrorAction SilentlyContinue
+    Get-AppxPackage "$app*" -Scope CurrentUser | Remove-AppxPackage -ErrorAction SilentlyContinue
 }
